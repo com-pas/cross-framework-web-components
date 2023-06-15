@@ -16,6 +16,9 @@ export class LitComponent extends LitElement {
 
   __increment() {
     this.counter += 1;
+    this.dispatchEvent(
+      new CustomEvent('counter-incremented', { detail: this.counter })
+    );
   }
 
   render() {
